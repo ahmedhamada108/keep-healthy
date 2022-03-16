@@ -1,0 +1,758 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+}
+:root {
+    --color-primary: #6c63ff ;
+    --color-success: #00bf8e ;
+    --color-warning: #f7c94b ;
+    --color-danger: #f75842;
+    --color-danger-variant: rgba(247 , 88, 66 , 0.4) ;
+    --color-white: #fff ;
+    --color-light:  rgba(255 , 255, 255 , 0.7);
+    --color-black: #000 ;
+    --color-bg: #1f2641 ;
+    --color-bg1: #2e3267 ;
+    --color-bg2: #424890 ;
+    --container-width-lg:76% ;
+    --container-width-md:90% ;
+    --container-width-sm:94% ;
+    --transition : all 400ms ease;
+
+}
+body {
+font-family: 'Montserrat', sans-serif;
+line-height: 1.7;
+color: var(--color-white);
+background: var(--color-bg);
+}
+.container {
+width:var(--container-width-lg) ;
+margin: 0 auto;
+}
+section {
+    padding: 6rem 0;
+}
+section h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.2;
+}
+h1{
+    font-size: 2.4rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.6rem;
+}
+h4 {
+    font-size: 1.3rem;
+}
+a{
+    color: var(--color-white);
+}
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding:1rem 2rem ;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.btn:hover {
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+.btn-primary {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+/* ********* Nav Bar ********** */
+nav {
+    background: transparent;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+/* change nav with java */
+.window-scroll {
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.2);
+}
+/* end change nav with java */
+.nav__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav button {
+    display: none;
+}
+.nav__menu {
+display: flex;
+align-items: center;
+gap: 4rem;
+}
+.nav__menu a {
+    font-size: 0.9rem; 
+    transition: var(--transition);
+    font-weight: 800;
+
+}
+
+    .nav__menu a:hover{
+        color: var(--color-bg2); 
+}
+/* End nav */
+header {
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 5rem;
+}
+.header__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+}
+.header__left p {
+    margin: 1rem 0 2.4em;
+    font-weight: 800;
+}
+.header__right-images img{
+    width: 600px;
+    border-radius: 50px;
+
+}
+/* *****Diet Section***** */
+.diet {
+    background: var(--color-bg1);
+height:32rem;
+}
+.diet h1 {
+    line-height: 1;
+    margin-bottom: 3rem;
+    
+}
+.diet__container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.diet__left {
+    margin-right:4rem ;
+}
+.diet__left p {
+margin: 1rem 0 3rem;
+font-weight: 800;
+
+}
+.diet__right{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+.category {
+background: var(--color-bg2);
+padding:0.5rem;
+border-radius:2rem;
+transition: var(--transition);
+}
+.category:hover {
+    box-shadow: 0 3rem 3rem rgb(0, 0, 0, 0.3);
+    z-index: 1;
+
+}
+
+.category:nth-child(2) .category__icon {
+    background: var(--color-danger);
+}
+.category:nth-child(3) .category__icon {
+    background: var(--color-success);
+}
+.category:nth-child(4) .category__icon {
+    background: var(--color-warning);
+}
+.category:nth-child(5) .category__icon {
+    background: var(--color-success);
+}
+.category__icon {
+    background: var(--color-primary);
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+.category h5 {
+    margin: 1rem 0 1rem;
+    font-weight: 800;
+
+}
+.category p {
+    font-size: 0.85;
+}
+/* End Diet section */
+
+/* Starrt websites section */
+/* .websites { */
+    /* margin-top:3rem; */
+/* } */
+.websites__container {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 2rem;
+}
+.website {
+background: var(--color-bg1);
+text-align: center;
+border: 1px solid transparent;
+transition: var(--transition);
+}
+.website:hover {
+    border-color: var(--color-primary);
+background: transparent;
+}
+.websites__info {
+padding: 2rem;
+
+}
+.websites__info p{
+margin: 1.2rem 0 2rem;
+font-size: 0.9rem;
+}
+/* END WEBSITES */
+/* Start VITAMINS */
+.vitamins {
+background: var(--color-bg1);
+box-shadow: 0 0 3rem rgb(0, 0, 0, 0.3);
+}
+.vitamins__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 1rem;
+}
+.vitamin {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    height: fit-content;
+    background: var(--color-primary);
+    cursor: pointer;
+}
+.vitamin h4{ 
+font-size: 1rem;
+line-height: 2.2;
+
+}
+.vitamin__icon {
+    align-self: flex-start;
+    font-size: 1.2rem;
+}
+.vitamin p { 
+margin-top: 0.8rem;
+display: none;
+}
+.vitamin.open p {
+    display: block;
+}
+/* end vitamins */
+
+/* <!-- Start moti --> */
+.motivational__container {
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: 5rem;
+
+}
+.moti {
+    padding-top: 2rem;
+}
+.avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 1rem solid var(--color-bg1);
+}
+
+.moti__info {
+    text-align: center;
+}
+.moti__body {
+background: var(--color-primary);
+padding: 2rem;
+margin-top: 3rem;
+position: relative;
+}
+.moti__body::before {
+content: "";
+display: block;
+background: 
+linear-gradient(135deg , transparent , var(--color-primary) ,
+ var(--color-primary) , var(--color-primary));
+width: 3rem;
+height: 3rem;
+position: absolute;
+left: 50%;
+top: -1.5rem;
+transform: rotate(45deg);
+}
+/* <!-- Endd moti --> */
+/* start fooooter */
+footer {
+    background: var(--color-bg1);
+    padding-top: 5rem;
+    font-size: 0.9rem;
+
+}
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 5rem;
+
+}
+.footer__container > div h4 {
+    margin-bottom: 1.2rem;
+}
+.footer__1 p {
+    margin: 1rem 0 2rem;
+}
+footer ul li {
+    margin-bottom: 0.7rem;
+}
+footer ul li a:hover {
+    text-decoration: underline;
+}
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+.footer__Copyright {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--color-bg2);
+}
+/* End fooooooter */
+@media screen and (max-width: 1024px){
+ .container {
+     width: var(--container-width-md);
+ }   
+ h1 { font-size: 2.2rem;
+}
+h2 { font-size: 1.7rem;}
+h3 { font-size: 1.4rem;}
+h4 {font-size: 1.2rem;}
+
+
+/* nabbar */
+nav button {
+    display: inline-block;
+    background: transparent;
+    font-size: 1.8rem; ;
+color: var(--color-white);
+cursor: pointer;
+}
+nav button#close-menu-btn {
+    display: none;}
+
+.nav__menu {
+    position: fixed;
+    top: 5rem;
+    right: 5%;
+    height: fit-content;
+    width: 18rem;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+}
+@keyframes animateNavItems {
+0% {
+transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+}
+100% {
+    transform: rotateZ(0) rotateX(0) scale(1) ;
+    opacity: 1;
+}
+}
+.nav__menu li {
+width:100%;
+height: 5.8rem;
+animation: animateNavItems 400ms linear forwards ;
+transform-origin: top right;
+opacity: 0;
+}
+.nav__menu li:nth-child(2) {
+animation-delay: 200ms;
+}
+.nav__menu li:nth-child(3) {
+animation-delay: 400ms;
+}
+.nav__menu li:nth-child(4) {
+animation-delay: 600ms;
+}
+.nav__menu li a {
+background: var(--color-primary);
+box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+width: 100%;
+height: 100%;
+display: grid;
+place-items: center;
+}
+.nav__menu li a:hover{
+background: var(--color-bg2);
+color: var(--color-white);
+}
+header {
+height: 52vh;
+
+margin-bottom: 4rem;
+}
+
+.header__container {
+    gap: 0;
+    padding-bottom: 3rem;
+}
+.diet {
+    height: auto;
+
+}
+.diet__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+.diet__left {
+    margin-right: 0;
+}
+
+.websites {
+    margin-top: 0;
+
+}
+.websites__container {
+    grid-template-columns: 1fr 1fr ;
+
+}
+.vitamins__container {
+    grid-template-columns: 1fr;
+}
+.vitamin {
+    padding: 1.5rem;
+}
+.footer__container {
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+/* End media qurries taplet */
+/* start media phone */
+@media screen and (max-width:600px){
+    .container {
+        width: var(--container-width-sm);
+    }
+    /* nav */
+    .nav__menu {
+        right: 3%;
+    }
+
+    /* HEADER */
+    header {
+        height: 100vh;
+    }
+    .header__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+margin-top: 0;
+    }
+.header__left p {
+    margin-bottom: 1.3rem;
+}
+.diet__right {
+    grid-template-columns: 1fr 1fr ;
+    gap: 0.7rem;
+}
+.category {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.category__icon {
+    margin-top: 4px;
+    display: inline-block;
+}
+.websites__container {
+    grid-template-columns: 1fr;
+
+}
+.moti__body {
+    padding: 1.2rem;
+
+}
+.footer__container {
+    grid-template-columns: 1fr ;
+    text-align: center;
+    gap: 2rem;
+}
+.footer__1 p {
+    margin: 1rem auto;
+}
+.footer__socials {
+    justify-content: center;
+}
+}
+/* End media phone */
+
+/* caloriescalc */
+/* .bg-dark {
+    text-align: center;
+    height: 100%;
+    background: var(--color-bg1);
+    padding-top: 5rem;
+    font-size: 0.9rem;
+}
+.container__caloriess {
+    background: var(--color-bg2);
+text-align: center;
+border: 1px solid transparent;
+transition: var(--transition);
+}
+.form-group_row {
+font-size: large;
+} */
+/* contact section */
+.Contact__container {
+    background: var(--color-bg1);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+    height: 44rem;
+    margin: 3rem auto;
+    border-radius: 3rem;
+}
+/* ASIDE */
+.Contact__aside {
+    background: var(--color-primary);
+    padding: 3rem;
+    border-radius: 3rem;
+    position: relative;
+    bottom: 1rem;
+
+}
+.aside__image {
+    width: 22rem;
+    margin-bottom: 2rem;
+    padding-right: 2rem;
+
+}
+.Contact__aside h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.Contact__aside p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+.Contact__details li {
+    display: flex;
+    gap : 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+.Contact__socials {
+    display: flex ;
+    gap: 0.8rem;
+    margin-top: 3rem;
+
+}
+.Contact__socials a {
+    background: var(--color-bg2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    transition: var(--transition);
+
+}
+.Contact__socials a:hover {
+background: transparent;
+
+}
+/* form */
+.Contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-right:4rem ;
+
+}
+.form__name {
+    display: flex;
+    gap: 1.2rem;
+}
+.Contact__form input[type="text"] {
+    width: 50%;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--color-bg);
+    color: var(--color-white);
+}
+.Contact__form .btn {
+    width: max-content;
+    margin-bottom: 1rem;
+   cursor: pointer; 
+}
+
+/* END contact */
+/* mediaq contact */
+@media screen and (max-width: 1024px) {
+.Contact {
+    padding-bottom: 0;
+}
+    .Contact__containerc {
+gap: 1.5rem;
+margin-top: 3rem;
+height: auto;
+padding: 1.5rem;
+
+}
+.Contact__aside {
+    width: auto;
+    padding: 1.5rem;
+    bottom: 0;
+}
+.Contact__form {
+    align-self: center;
+    margin-right: 1.5rem;
+}
+}
+
+@media screen and (max-width: 600px) {
+    .Contact__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 0;
+        padding: 0;
+    }
+    .Contact__form {
+        margin: 0 1.5rem 3rem;
+    }
+    .form__name {
+        flex-direction: column;}
+
+
+.form__name input[type="text"] {width: 100%;}
+} 
+
+/* /* end media */
+
+/* caloriescalc */
+
+.card {
+    position: relative;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    width: 80%;
+
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    text-align: center;
+    word-wrap: break-word;
+    background-color:var(--color-bg1);
+    background-clip: border-box;
+    border:3px solid rgba(0,0,0,.125);
+    font-weight: 400;
+
+    border-radius: 4rem; }
+    .col-form-label {
+        padding-top: calc(0.375rem + 1px);
+        padding-bottom: calc(0.375rem + 1px);
+        margin-bottom: 0;
+        font-size: 1rem;
+        font-weight: 700;
+
+        line-height: 1;
+    }
+    .form-control {
+        width:30%;
+        height: fit-content;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--color-white);
+        background-color: var(--color-bg);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 1rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    
+
+        
+        .btn-dark {
+            color: #fff;
+            background-color: var(--color-bg2);
+            border-color: var(--color-bg2); 
+            border-radius: 4rem;
+            border:3px solid rgba(0,0,0,.125);
+        width: 35%;
+        }
+            .custom-select {
+                display: inline-block;
+                width:35%;
+                background: var(--color-bg);
+                height: calc(1.5em + 0.75rem + 2px);
+                padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: var(--color-white);
+                vertical-align: middle;
+                border: 1px solid #ced4da;
+                border-radius: 0.25rem;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none; }
+    
+
+
+/* caloriescalc */
+
+
+
