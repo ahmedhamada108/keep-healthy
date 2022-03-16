@@ -19,7 +19,7 @@ class Admin extends Migration
 			$table->string('name');
 			$table->string('email');
             $table->string('password');
-            $table->string('remember_token');
+            $table->string('remember_token')->default(null);
 			$table->timestamps(6);
 		});
     }
