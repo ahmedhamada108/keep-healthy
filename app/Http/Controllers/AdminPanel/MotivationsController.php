@@ -87,7 +87,6 @@ class MotivationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-    try {
          $data = $request->validate([
             'name'=>'required',
             'job'=>'required',
@@ -117,10 +116,6 @@ class MotivationsController extends Controller
              session()->flash('success', 'the motivations has been edited');
              return redirect()->route('motivations.index');
          }
-    }catch (exception  $e) {
-        session()->flash('success', $e->getMessage() );
-        return redirect()->route('motivations.index');
-    }
 }
 
     /**

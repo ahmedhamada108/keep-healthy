@@ -41,8 +41,6 @@ class ExercisesController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-
                 $data = $request->validate([
                 'title'=>'required',
                 'content'=>'required',
@@ -66,11 +64,6 @@ class ExercisesController extends Controller
                     session()->flash('success', 'the exercises has been added');
                     return redirect()->route('exercises.index');
             }
-        }catch (exception  $e) {
-            session()->flash('success', $e->getMessage() );
-            return redirect()->route('exercises.index');
-        }
-     
 }
 
     /**
@@ -102,7 +95,6 @@ class ExercisesController extends Controller
      */
     public function update(Request $request, $id)
     {
-    try {
          $data = $request->validate([
             'title'=>'required',
             'content'=>'required',
@@ -133,12 +125,7 @@ class ExercisesController extends Controller
              session()->flash('success', 'the exercises has been edited');
              return redirect()->route('exercises.index');
          } // end of if satatments 
-
-    }catch (exception  $e) {
-        session()->flash('success', $e->getMessage() );
-        return redirect()->route('exercises.index');
-    } // end of try funaction 
-
+         
 } // end of the update fucation 
 
     /**

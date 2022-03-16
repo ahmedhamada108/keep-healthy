@@ -43,8 +43,6 @@ class SitesController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-
                 $data = $request->validate([
                 'title'=>'required',
                 'content'=>'required',
@@ -68,11 +66,6 @@ class SitesController extends Controller
                     session()->flash('success', 'the sites has been added');
                     return redirect()->route('sites.index');
             }
-        }catch (exception  $e) {
-            session()->flash('success', $e->getMessage() );
-            return redirect()->route('sites.index');
-        }
-     
     }
 
     /**
@@ -96,7 +89,6 @@ class SitesController extends Controller
      */
     public function update(Request $request, $id)
     {
-    try {
          $data = $request->validate([
             'title'=>'required',
             'content'=>'required',
@@ -126,10 +118,6 @@ class SitesController extends Controller
              session()->flash('success', 'the sites has been edited');
              return redirect()->route('sites.index');
          }
-    }catch (exception  $e) {
-        session()->flash('success', $e->getMessage() );
-        return redirect()->route('sites.index');
-    }
 }
 
     /**

@@ -42,8 +42,6 @@ class VitaminsController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-
             $data = $request->validate([
             'title'=>'required',
             'content'=>'required'
@@ -52,12 +50,6 @@ class VitaminsController extends Controller
             session()->flash('success', 'the vitamins has been added');
             return redirect()->route('vitamins.index');
             // end creating the object
-
-        }catch (exception  $e) {
-            session()->flash('success', $e->getMessage() );
-            return redirect()->route('vitamins.index');
-
-        }// end try funcation
      
     }// end funcation store
 
@@ -82,7 +74,6 @@ class VitaminsController extends Controller
      */
     public function update(Request $request, $id)
     {
-    try {
          $data = $request->validate([
             'title'=>'required',
             'content'=>'required',
@@ -92,10 +83,6 @@ class VitaminsController extends Controller
              session()->flash('success', 'the vitamins has been edited');
              return redirect()->route('vitamins.index');
          
-    }catch (exception  $e) {
-        session()->flash('success', $e->getMessage() );
-        return redirect()->route('vitamins.index');
-    }
 }
 
     /**
